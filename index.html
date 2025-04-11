@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre Fabre Team - Ticket Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo and Title -->
+    <header>
+        <br>
+        <img src="pierre_fabre_logo.png" alt="Pierre Fabre Logo" class="logo">
+        <h1>Pierre Fabre Team - Ticket Tracker</h1>
+    </header>
+
+    <div class="container">
+        <form id="ticketForm">
+            <input type="text" id="projectId" placeholder="Project ID" required>
+            <input type="text" id="memberName" placeholder="Member Name" required>
+            <select id="priority">
+                <option value="Urgent">Urgent</option>
+                <option value="Critical">Critical</option>
+                <option value="Major">Major</option>
+                <option value="Minor">Minor</option>
+                <option value="High">High</option>
+                <option value="Highest">Highest</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit">Add Ticket</button>
+            <button type="button" id="eraseBtn">Erase All Data</button> <!-- Button to erase data -->
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Project ID</th>
+                    <th>Member</th>
+                    <th>Priority</th> <!-- New column for Priority -->
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Time Spent (hrs)</th>
+                    <th>Live Timer</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="ticketTableBody"></tbody>
+        </table>
+
+        <div id="ticketSummary">
+            <p>Total Tickets: <span id="totalTickets">0</span></p>
+        </div>
+
+        <button id="exportBtn">Export to Excel</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+</body>
+</html>
